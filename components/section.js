@@ -18,7 +18,6 @@ export default function section(props) {
 		} else {
 			sectionClass += ' bg-blue-100';
 		}
-		
 	}
 
 	return (
@@ -27,7 +26,7 @@ export default function section(props) {
     			<h2 class="text-xl font-bold text-gray-900">{ props.title }</h2>
     		</div>
     		<div className={sizeRightClass}>
-    			{props.children}
+    			{ props.children }
     		</div>
     	</section>
 	);
