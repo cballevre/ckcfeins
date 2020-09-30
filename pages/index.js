@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Section from '../components/section'
+import Intro from '../components/intro'
 
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -9,22 +10,21 @@ import ReactMarkdown from 'react-markdown'
 export default class Home extends React.Component {
 
     static async getInitialProps({ req }) {
-        const header = await require(`../contents/header.md`);
+        const intro = await require(`../contents/intro.md`);
         const activiy = await require(`../contents/activity.md`);
         const infos = await require(`../contents/infos.md`);
         const actuality = await require(`../contents/actuality.md`);
         const contact = await require(`../contents/contact.md`);
-        return { header, activiy, infos, actuality, contact }
+
+        return { intro, activiy, infos, actuality, contact }
     }
 
     render() {
         return (
             <div>
-                <Section 
-                    title="Canoë Kayak Club de Feins"
-                    index={1}>
-                    <ReactMarkdown source={this.props.header.default} />
-                </Section>
+                <Intro>
+                    <ReactMarkdown source={this.props.intro.default} />
+                </Intro>
                 <Section 
                     title="Activités"
                     index={2}>
