@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Section from '../components/section'
 import Intro from '../components/intro'
+import Content from '../components/content'
+import Footer from '../components/footer'
 
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -25,45 +26,45 @@ export default class Home extends React.Component {
                 <Intro>
                     <ReactMarkdown source={this.props.intro.default} />
                 </Intro>
-                <Section 
+                <Content 
                     title="Activités"
                     index={2}>
                     <ReactMarkdown source={this.props.activiy.default} />
-                </Section>
-                <Section 
+                </Content>
+                <Content 
                     title="Infos pratiques" 
                     index={3}>
                     <ReactMarkdown source={this.props.infos.default} />
-                </Section>
-            <Section title="Photos" 
-                index={4}>
-                <div class="flex flex-row md:flex-row">
-                    <div class="w-2/3 h-xl">
-                        <div style={{backgroundImage: `url('/img/photos_1.jpeg')`}} class="bg-cover bg-center h-1/3 mb-4"></div>
-                        <div style={{backgroundImage: `url('/img/photos_3.jpeg')`}} class="bg-cover bg-center h-2/3"></div>    
+                </Content>
+                <Content title="Photos" 
+                    index={4}>
+                    <div className="flex h-64 w-full overflow-x-auto md:overflow-x-hidden">
+                        <img src="/img/photos_1.jpeg" alt=""  className='h-full'/>
+                        <img src="/img/photos_3.jpeg" alt=""  className='h-full ml-6'/>
+                        <img src="/img/photos_2.jpeg" alt="" className='h-full ml-6'/>
+                        <img src="/img/photos_4.jpeg" alt="" className='h-full ml-6'/>
                     </div>
-                    <div class="w-1/3 ml-4">
-                        <div style={{backgroundImage: `url('/img/photos_2.jpeg')`}} class="bg-cover bg-center h-1/2 mb-4" />
-                        <div style={{backgroundImage: `url('/img/photos_4.jpeg')`}} class="bg-cover bg-center h-1/2" />
+                </Content>
+                <Footer 
+                    title="Retrouvez nos actualités" 
+                    index={5}>
+                    <ReactMarkdown source={this.props.actuality.default} />
+                </Footer>
+                <Footer 
+                    title="Contact" 
+                    index={6}>
+                    <ReactMarkdown source={this.props.contact.default} />
+                </Footer>
+                <Footer 
+                    title="Merci à tous nos partenaires" 
+                    index={7}>
+                    <div className="flex h-24 w-full overflow-x-auto">
+                        <img src="/img/ffck.png" alt="Logo de la Fédération française de canoë-kayak"  className='h-full'/>
+                        <img src="/img/ille&vilaine.jpg" alt="Logo du Département d'Ille-et-Vilaine"  className='h-full ml-6'/>
+                        <img src="/img/val_dille_aubigne.png" alt="Logo de la Communauté de communes Val d'Ille-Aubigné" className='h-full ml-6'/>
                     </div>
-                </div>
-            </Section>
-            <Section 
-                title="Retrouvez nos actualités" 
-                index={5}>
-                <ReactMarkdown source={this.props.actuality.default} />
-            </Section>
-            <Section 
-                title="Contact" 
-                index={6}>
-                <ReactMarkdown source={this.props.contact.default} />
-            </Section>
-            <Section 
-                title="Merci à tous nos partenaires" 
-                index={7}>
-                
-            </Section>
-        </div>
+                </Footer>
+            </div>
         );
     }
 }

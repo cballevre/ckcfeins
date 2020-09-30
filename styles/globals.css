@@ -1,16 +1,48 @@
 @tailwind base;
 @tailwind components;
 
-.section-content p {
+p {
 	@apply mb-3;
 }
 
-.section-content strong {
+p:last-child {
+	@apply mb-0;
+}
+
+strong {
 	@apply text-black;
 }
 
-.section-content ul {
+.content ul {
 	@apply list-disc list-inside mb-3;
+}
+
+.content ul:last-child {
+	@apply mb-0;
+}
+
+.footer p {
+	@apply mb-4;
+}
+
+.footer p:last-child {
+	@apply mb-0;
+}
+
+.footer li {
+	@apply mb-4;
+}
+
+.footer li:last-child {
+	@apply mb-0;
+}
+
+.footer li a{
+	@apply block border-b-2 border-gray-200 pb-1;
+}
+
+.footer li a:hover {
+	@apply text-black border-blue-200;
 }
 
 @tailwind utilities;
