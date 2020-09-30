@@ -1,12 +1,16 @@
 @tailwind base;
 @tailwind components;
 
-.content p {
+.section-content p {
 	@apply mb-3;
 }
 
-.content strong {
+.section-content strong {
 	@apply text-black;
+}
+
+.section-content ul {
+	@apply list-disc list-inside mb-3;
 }
 
 @tailwind utilities;
